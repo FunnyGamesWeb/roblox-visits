@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Roblox Visits</title>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: Arial;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    #visits {
+      font-size: 26px;
+      padding: 12px 24px;
+      background: #222;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,255,100,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🏍️ Motorcycle Racing</h1>
+  <div id="visits">Lade Visits...</div>
+
+  <script>
+    fetch("https://roblox-visits-proxy.chatgpt-proxy.repl.co/visits/106425431775947")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("visits").textContent = "Visits: " + data.visits.toLocaleString();
+      })
+      .catch(err => {
+        document.getElementById("visits").textContent = "Fehler beim Laden.";
+        console.error(err);
+      });
+  </script>
+
+</body>
+</html>
